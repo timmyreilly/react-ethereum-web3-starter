@@ -88,6 +88,53 @@ Not much yet... Let's add react on the next branch.
 
 Let's do some cool, react stuff. 
 
+First install react and react-dom: 
+
+`> npm install -D react react-dom`
+
+Also, we'll need babel-preset-react to get all the goodness out of our non-vanilla JavaScript. 
+
+`> npm install --save-dev babel-cli babel-preset-react`
+
+And update your webpack.config.js to handle babel. 
+Now our new rules for javascript: 
+```json
+{
+    test: /\.js$/,
+    exclude: /node_modules/,
+    loader: 'babel-loader',
+
+    options: {
+        presets: ['env', 'react']
+    }
+}
+```
+
+Add a re-write of index.js: 
+```JavaScript
+import React from 'react'; 
+import ReactDOM from 'react-dom'; 
+
+ReactDOM.render(
+    <h1>Hello world</h1>,
+    document.getElementById('root')
+)
+```
+
+We'll also need to add our script tag in our index.html. 
+Here's a snippet of our HTML: 
+```html
+<body>
+    <h1>Put yo app here</h1>
+    <div id="root"></div>
+    <script src="./main.bundle.js"></script> 
+</body>
+```
+
+Alright let's run it again: `npm run start` 
+
+
+
 
 
 
