@@ -12,6 +12,7 @@ const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+	mode: 'development', 
 	entry: './src/index',
 
 	output: {
@@ -22,7 +23,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: {},
+				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
 
@@ -31,7 +32,7 @@ module.exports = {
 				}
 			},
 			{
-				test: {},
+				test: /\.css$/,
 
 				use: [
 					{
