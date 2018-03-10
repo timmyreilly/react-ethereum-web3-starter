@@ -133,6 +133,29 @@ Here's a snippet of our HTML:
 
 Alright let's run it again: `npm run start` 
 
+Cool! Now we've got some react on the DOM! 
+
+Let's move to phase 3! 
+
+## Phase 3
+
+### Talking to the blockchain with Drizzle! 
+Drizzle is a new thing from the Truffle crew. 
+
+First a prerequsite - (node-gyp)[https://github.com/nodejs/node-gyp]
+
+I'm on windows so I did this in an elevated PowerShell: 
+```
+> npm install --global --production windows-build-tools 
+```
+
+We're going to get Ganache-cli
+And drizzle talking to each other... Hopefully. 
+
+First we'll install truffle globall: 
+`> npm install -g truffle` 
+
+
 
 
 
