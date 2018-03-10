@@ -1,0 +1,15 @@
+{
+  "name": "react-ethereum-web3-starter",
+  "version": "1.0.0",
+  "description": "starter code for building apps againt contracts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "timmyreilly",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10"
+  }
+}
