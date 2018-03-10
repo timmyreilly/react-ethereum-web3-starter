@@ -84,6 +84,10 @@ And visit: `http://localhost:8080/` in your browser and see your incredible site
 
 Not much yet... Let's add react on the next branch. 
 
+## Welcome to Branch B!
+
+Let's do some cool, react stuff. 
+
 
 
 
