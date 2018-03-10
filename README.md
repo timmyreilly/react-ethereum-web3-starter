@@ -62,11 +62,21 @@ Next I added a index.html to my /dist folder.
 </head>
 
 <body>
+    <h1>PUT YO APP HERE</h1> 
     <div class="root"></div>
 </body>
 
 </html>
 ```
+
+Now let's setup our webpack-dev-server for hosting our site for development and testing. 
+
+First I added this line to my package.json 'scripts':
+`start: webpack-dev-server --hot --content-base dist/` 
+
+And installed webpack-dev-server: 
+`> npm install -D webpack-dev-server` 
+
 
 
 
