@@ -77,9 +77,12 @@ First I added this line to my package.json 'scripts':
 And installed webpack-dev-server: 
 `> npm install -D webpack-dev-server` 
 
+Now start your server: 
+`> npm run start` 
 
+And visit: `http://localhost:8080/` in your browser and see your incredible site! 
 
-
+Not much yet... Let's add react on the next branch. 
 
 
 
