@@ -98,7 +98,7 @@ Also, we'll need babel-preset-react to get all the goodness out of our non-vanil
 
 And update your webpack.config.js to handle babel. 
 Now our new rules for javascript: 
-```json
+```js
 {
     test: /\.js$/,
     exclude: /node_modules/,
@@ -208,10 +208,57 @@ module.exports = {
 };
 ```
 
+Now in one terminal start the ganache-cli: 
+`> ganache-cli -b 3` 
 
+And in your other compile and migrate your contracts in the truff-n-stuff directory: 
+`\truff-n-stuff> truffle compile`
+`\truff-n-stuff> truffle migrate`
+`\truff-n-stuff> truffle migrate --reset` <- this one might come in handy. It will reset your contracts. 
 
+Awesome! We're speaking blockchain. 
+Let's build a simple storage contract: 
 
+```
+pragma solidity ^0.4.18;
 
+contract SimpleStorage {
+  event StorageSet(
+    string _message
+  );
+
+  uint public storedData;
+
+  function set(uint x) public {
+    storedData = x;
+
+    StorageSet("Data stored successfully!");
+  }
+}
+```
+
+This is solc a new programming language for Ethereum Contract Dev -> It get compiled to bytecode and deployed when you run truffle migrate. 
+
+We'll also need to add a file to our migrations directory with instructions for truffle on how to put our contract on the chain. 
+
+Our new file will be: `\truff-n-stuff\migrations\2_deploy_contracts.js
+
+And this is what it's contents are: (<- is this proper grammer?)
+
+```
+var SimpleStorage = artifacts.require("./SimpleStorage.sol");
+
+module.exports = function(deployer) {
+  deployer.deploy(SimpleStorage);
+};
+```
+
+Cool, now let's re-run our compile and migrate commands: 
+
+`\truff-n-stuff> truffle compile`
+`\truff-n-stuff> truffle migrate --reset`
+
+Now inside of `truff-n-stuff\build\contracts\SimpleStorage.json` you can see the details of our deployed contract like the bytecode and the abi! 
 
 
 
