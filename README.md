@@ -262,8 +262,12 @@ Now inside of `truff-n-stuff\build\contracts\SimpleStorage.json` you can see the
 
 
 
+### Next Phase: Web Contract Communication with Web3.js 
 
+We've got everything in place. 
+A simple web app. A contract we can deploy.
 
+We're going to use drizzle/web3 and a supporting cast of libraries to make this happen. 
 
 
 
@@ -276,3 +280,6 @@ Now inside of `truff-n-stuff\build\contracts\SimpleStorage.json` you can see the
 Some Relevant Links:
 
 [Ethereum/Web3 GitHub](https://github.com/ethereum/web3.js/)
+[Truffle Boxes](http://truffleframework.com/boxes/)
+[Drizzle Repo](https://github.com/trufflesuite/drizzle)
+
