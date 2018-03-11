@@ -142,19 +142,71 @@ Let's move to phase 3!
 ### Talking to the blockchain with Drizzle! 
 Drizzle is a new thing from the Truffle crew. 
 
-First a prerequsite - (node-gyp)[https://github.com/nodejs/node-gyp]
+First a prerequsite - [node-gyp](https://github.com/nodejs/node-gyp)
 
 I'm on windows so I did this in an elevated PowerShell: 
 ```
 > npm install --global --production windows-build-tools 
 ```
+It will probably take a while. 
+
+Next we need to add python to our node path: 
+```
+> npm config set python C:\Users\USERNAME\.windows-build-tools\python27\python.exe
+```
+Or add it to your path... You know the drill. 
+
 
 We're going to get Ganache-cli
 And drizzle talking to each other... Hopefully. 
 
-First we'll install truffle globall: 
+First we'll install truffle globally: 
 `> npm install -g truffle` 
 
+And our ganache-cli: 
+`> npm install -g ganache-cli`
+
+Now you'll probably need to re-open your terminal and possibly restart your computer. 
+
+Let's test our new ganache abilities:
+
+`> ganache-cli -b 3 -d `
+This will open a test rpc instance in dev mode with a block time of three units. I believe it's seconds. 
+
+#### COOL Now we're ready for contracts! 
+
+I'm going to start by creating a new folder, in this case truff-n-stuff. 
+```
+mkdir truff-n-stuff
+cd truff-n-stuff
+```
+
+Then I'm going to cd into that folder and run: 
+
+`> truffle init` 
+
+That will create our first contracts and allow us to manage contract deployment with migrations. 
+At this point it's a good idea to have one terminal instance to run ganache-cli and another one to do migrations and all other dev stuff. 
+
+We'll finish setting up truffle by changing our `truff-n-stuff\truffle.js` to this: 
+```
+module.exports = {
+  migrations_directory: "./migrations",
+  networks: {
+    development: {
+      host: "localhost",
+      port: 8545,
+      network_id: "*" // Match any network id
+    }
+  },
+  solc: {
+    optimizer: {
+      enabled: true,
+      runs: 500
+    }
+  } 
+};
+```
 
 
 
