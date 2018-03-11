@@ -21,7 +21,7 @@ Let's next initialize webpack for our project:
 ```
 n> webpack-cli init 
 // set multiple bundles -  to No 
-// '/src/index' as the first module to enter the application. 
+// ./src/index as the first module to enter the application. Don't forget the dot!
 // Yes - we'll be using ES2015 (don't actually know if is required) 
 // CSS will be our CSS solution 
 // Default css bundle
@@ -38,8 +38,19 @@ For css:
 Save those changes. 
 *You can always visit the files in this repository if smoething is not clear. *
 
-Now run webpack: 
-`webpack` 
+Now we'll create a simple placeholder .js file in a `src/` folder. 
+
+```
+> mkdir src
+> cd src
+\src> touch index.js // or echo "var x = 0" >> index.js for powershell. 
+\src> cd ..
+```
+
+You can put whatever js in that file and it will get uglified and webpacked into a dist directory. So let's...
+
+run webpack: 
+`\> webpack` 
 
 You'll probably get a `WARNING in configuration The 'mode' option has not been set...`
 
