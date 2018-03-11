@@ -38,14 +38,10 @@ For css:
 Save those changes. 
 *You can always visit the files in this repository if smoething is not clear. *
 
-Now we'll create a simple placeholder .js file in a `src/` folder. 
-
-```
-> mkdir src
-> cd src
-\src> touch index.js // or echo "var x = 0" >> index.js for powershell. 
-\src> cd ..
-```
+Now we'll create a simple placeholder .js file in a new file: `src/index.js` > 
+```js
+var x = 0; 
+``` 
 
 You can put whatever js in that file and it will get uglified and webpacked into a dist directory. So let's...
 
@@ -92,15 +88,19 @@ Next I added a index.html to my /dist folder.
 Now let's setup our webpack-dev-server for hosting our site for development and testing. 
 
 First I added this line to my package.json 'scripts':
-`start: webpack-dev-server --hot --content-base dist/` 
+`"start": "webpack-dev-server --hot --content-base dist/"` 
 
-And installed webpack-dev-server: 
-`> npm install -D webpack-dev-server` 
+And installed webpack-dev-server and webpack and all other required dev dependances: 
+```
+> npm install -D webpack-dev-server webpack webpack-cli 
+> npm install 
+``` 
 
 Now start your server: 
 `> npm run start` 
 
 And visit: `http://localhost:8080/` in your browser and see your incredible site! 
+Press ctr+c to stop your server. 
 
 Not much yet... Let's add react on the next branch. 
 
@@ -117,7 +117,7 @@ Also, we'll need babel-preset-react to get all the goodness out of our non-vanil
 `> npm install --save-dev babel-cli babel-preset-react`
 
 And update your webpack.config.js to handle babel. 
-Now our new rules for javascript: 
+Now our new presets for javascript: 
 ```js
 {
     test: /\.js$/,
@@ -171,11 +171,13 @@ I'm on windows so I did this in an elevated PowerShell:
 It will probably take a while. 
 
 Next we need to add python to our node path: 
+
+This might work, but you might have to do it for each terminal you open: 
+*don't forget the username* 
 ```
 > npm config set python C:\Users\USERNAME\.windows-build-tools\python27\python.exe
 ```
-Or add it to your path... You know the drill. 
-
+Also you can add it to your path... You know the drill. 
 
 We're going to get Ganache-cli
 And drizzle talking to each other... Hopefully. 
@@ -197,8 +199,8 @@ This will open a test rpc instance in dev mode with a block time of three units.
 
 I'm going to start by creating a new folder, in this case truff-n-stuff. 
 ```
-mkdir truff-n-stuff
-cd truff-n-stuff
+> mkdir truff-n-stuff
+> cd truff-n-stuff
 ```
 
 Then I'm going to cd into that folder and run: 
