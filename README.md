@@ -238,8 +238,12 @@ And in your other compile and migrate your contracts in the truff-n-stuff direct
 `\truff-n-stuff> truffle migrate`
 `\truff-n-stuff> truffle migrate --reset` <- this one might come in handy. It will reset your contracts. 
 
+You'll be able to see all these contract deployments in the terminal where you started the ganache-cli. Neat! 
+
 Awesome! We're speaking blockchain. 
 Let's build a simple storage contract: 
+
+`\my-dapp\truff-n-stuff\contracts\SimpleStorage.sol`: 
 
 ```
 pragma solidity ^0.4.18;
