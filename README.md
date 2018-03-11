@@ -6,28 +6,37 @@ Hopefully the branches of this repository will help you and I come to grips with
 
 They're the future after all! 
 
+You'll want to do this in an elevated prompt and navigate to the root of where you want the project to live. 
 Here's what we've done so far: 
 ```
-> npm init 
+\my-dapp> npm init 
 // defaults are fine for now
-> npm install -g webpack 
-> npm install webpack-cli -g 
-// -D saves to dev dependancies 
+\my-dapp> npm install -g webpack 
+\my-dapp> npm install webpack-cli -g 
+// -g downloads this on your global node.js instance. 
 ``` 
 
-This gives us a basic JavaScript setup... 
-Let's next add Webpack: 
+This gives us a npm and webpack. 
+Let's next initialize webpack for our project: 
+```
+n> webpack-cli init 
+// set multiple bundles -  to No 
+// '/src/index' as the first module to enter the application. 
+// Yes - we'll be using ES2015 (don't actually know if is required) 
+// CSS will be our CSS solution 
+// Default css bundle
+// Default config file name 
+```
 
-```
-> npm install webpack-cli -D
-> webpack-cli init 
-// Accept the defaults except multiple bundles - set to No 
-```
-Next you'll need to update the webpack.config.js with some tests: 
+Next you'll need to update the webpack.config.js with some test parameters:
+Under `module.rules.test` - *you'll remove the curly braces*:  
 For JavaScript: 
 `test: /\.js$/,`
 For css: 
 `test: /\.css$/,`
+
+Save those changes. 
+*You can always visit the files in this repository if smoething is not clear. *
 
 Now run webpack: 
 `webpack` 
