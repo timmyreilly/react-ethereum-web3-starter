@@ -295,6 +295,9 @@ A simple web app. A contract we can deploy.
 
 We're going to use drizzle/web3 and a supporting cast of libraries to make this happen. 
 
+First we'll start with basic drizzle to communicate with our deployed contracts. 
+This is the tricky/most undocumented part...
+
 
 
 
