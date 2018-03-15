@@ -52,7 +52,7 @@ You'll probably get a `WARNING in configuration The 'mode' option has not been s
 
 Add mode to your exports
 Like this: 
-```json
+```
 module.exports = {
 
 	entry: "./src/js/index.js",
@@ -298,9 +298,51 @@ We're going to use drizzle/web3 and a supporting cast of libraries to make this 
 First we'll start with basic drizzle to communicate with our deployed contracts. 
 This is the tricky/most undocumented part...
 
+Right now we have our barebones react app: 
 
+```
+ReactDOM.render(
+    <h1>Hello world</h1>,
+    document.getElementById('root')
+)
+```
 
+Let's expand this a bit so we have a Component class to interface with web3: 
 
+```
+class App extends React.Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            storageValue: 0, 
+        }
+    }
+
+    render(){
+        return(
+            <h1>Your Component</h1>
+        )
+    }
+}
+
+ReactDOM.render(
+    <App></App>,  
+    document.getElementById('root')
+)
+
+```
+
+Now let's get web3 involved... 
+
+Let's install web3 and get the results into a component: 
+`> npm install web3 -s` 
+
+And import it and our simple storage abi...
+```
+import Web3 from 'web3'
+import SimpleStorage from './../truff-n-stuff/build/contracts/SimpleStorage.json'
+```
 
 
 
@@ -308,7 +350,8 @@ This is the tricky/most undocumented part...
 
 Some Relevant Links:
 
-[Ethereum/Web3 GitHub](https://github.com/ethereum/web3.js/)
-[Truffle Boxes](http://truffleframework.com/boxes/)
-[Drizzle Repo](https://github.com/trufflesuite/drizzle)
+- [Ethereum/Web3 GitHub](https://github.com/ethereum/web3.js/)
+- [Truffle Boxes](http://truffleframework.com/boxes/)
+- [React Truffle Box Repo](https://github.com/truffle-box/react-box)
+- [Drizzle Repo](https://github.com/trufflesuite/drizzle)
 
